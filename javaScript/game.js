@@ -1,6 +1,5 @@
 function computerPlay(){
   const computerSelection= Math.floor(Math.random()*3);
-  console.log(computerSelection)
   switch(computerSelection){
     case 0:
         return "rock";
@@ -14,8 +13,8 @@ function computerPlay(){
   }
 }
 function playerSelectionPrompt(roundNumber){
-    let playerInputOkFlag=false;
-    let playerInput;
+    let playerInputOkFlag=false,
+    playerInput;
     do{
         playerInput=prompt(`Round #${roundNumber+1}: type in your selection(rock,paper,scissors)`);
         playerInput=playerInput.toLocaleLowerCase();
@@ -35,7 +34,6 @@ function playerSelectionPrompt(roundNumber){
 function playround(roundNumber){
     const computerSelection=computerPlay();
     const playerSelection=playerSelectionPrompt(roundNumber);
-    console.log("p",playerSelection,"c",computerSelection)
     let outcome = comperSelections(playerSelection,computerSelection);
     if(outcome==="draw"){
         alert(`its a draw! you both picked ${computerSelection}`)
